@@ -16,8 +16,8 @@ jobs:
 
       - name: Display target and ref
         env:
-          INPUT_TARGET: ${{ gtihub.events.inputs.target }}
-          REFERENCE: ${{ gtihub.ref_name }}
+          INPUT_TARGET: ${{ github.events.inputs.target }}
+          REFERENCE: ${{ github.ref_name }}
         run: |
           echo "Input target is $INPUT_TARGET"
           echo "Github reference is $REFERENCE"
