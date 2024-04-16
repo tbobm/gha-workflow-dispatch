@@ -11,6 +11,9 @@ jobs:
     name: "Display currently used ref"
     runs-on: "ubuntu-latest"
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Display target and ref
         env:
           INPUT_TARGET: ${{ gtihub.events.inputs.target }}
@@ -19,3 +22,4 @@ jobs:
           echo "Input target is $INPUT_TARGET"
           echo "Github reference is $REFERENCE"
           echo "hard-coded reference (new-branch)"
+          cat current-version
