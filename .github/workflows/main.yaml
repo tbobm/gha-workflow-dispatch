@@ -18,4 +18,4 @@ jobs:
         run: |
           echo "Input target is $INPUT_TARGET"
           echo "Github reference is $REFERENCE"
-          echo "hard-coded reference (pre-merge)"
+          echo "hard-coded reference (new-branch)"
