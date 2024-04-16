@@ -1,0 +1,21 @@
+---
+name: 'Manual dispatch'
+'on':
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Ref to retrieve"
+
+jobs:
+  display-ref:
+    name: "Display currently used ref"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Display target and ref
+        env:
+          INPUT_TARGET: ${{ gtihub.events.inputs.target }}
+          REFERENCE: ${{ gtihub.ref_name }}
+        run: |
+          echo "Input target is $INPUT_TARGET"
+          echo "Github reference is $REFERENCE"
+          echo "hard-coded reference (pre-merge)"
